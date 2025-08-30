@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(1, 1, 29);
+    background-color: rgb(34, 34, 95);
     color: aliceblue;
     display: flex;
     justify-content: center;
@@ -10,13 +10,24 @@ body {
 
 .display {
     background-color: white;
+    color: black;
     margin-bottom: 10px;
     height: 40px;
+    cursor: text;
+    font-size: 25px;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
 }
 
 .calculator{
+    background-color: rgb(1, 1, 29);
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .button {
@@ -58,4 +69,8 @@ div {
 
 .bottom-most {
     display: flex;
+}
+
+#equal {
+    background-color: rgb(9, 117, 9);
 }

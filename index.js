@@ -79,9 +79,21 @@ function operate(operator, num1, num2) {
 
 }
 
+const populator = function() {
+    let display = document.querySelector(".display")
+    let buttons = document.querySelectorAll(".button")
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            if(!isNaN(button.textContent)) {
+                display.textContent += button.textContent
+            }
+        })
+    });
+}
+
 let num1;
 let num2;
 let operator;
 
-
-
+populator();
