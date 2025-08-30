@@ -1,44 +1,81 @@
-function add(a, b){
-    a = parseInt(a)
-    b = parseInt(b)
+function add(num1, num2){
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
 
-    return a + b;
+    return num1 + num2;
 }
 
-function sub(a,b) {
-    a = parseInt(a)
-    b = parseInt(b)
+function sub(num1,num2) {
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
 
-    return a-b;
+    return num1-num2;
 }
 
-function multiply(a, b) {
-    a = parseInt(a)
-    b = parseInt(b)
+function multiply(num1, num2) {
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
 
-    return a*b
+    return num1*num2
 }
 
-function divide(a, b) {
-    a = parseInt(a)
-    b = parseInt(b)
-    if (b === 0) {
+function divide(num1, num2) {
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
+    if (num2 === 0) {
         return "Can't divide by 0"
     }
 
-    return a/b
+    return num1/num2;
 }
+
+function inverse(num1) {
+    num1 = parseFloat(num1);
+    return 1/num1;
+}
+
+function square(num1) {
+    num1 = parseFloat(num1);
+    return num1**2;
+}
+
+function squareRoot(num1) {
+    num1 = parseFloat(num1)
+    return Math.sqrt(num1)
+}
+
+function invertor(num1) {
+    num1 = parseFloat(num1);
+    return -num1;
+}
+
+function remainder(num1, num2) {
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
+    return num1%num2;
+}
+console.log(squareRoot(2))
 
 function operate(operator, num1, num2) {
     if (operator == add) {
-        return add(num1, num2)
+        return add(num1, num2);
     } else if(operator == sub) {
-        return sub(num1, num2)
+        return sub(num1, num2);
     } else if(operator == multiply) {
-        return multiply(num1, num2)
+        return multiply(num1, num2);
     } else if(operator == divide) {
-        return divide(num1, num2)
-    } 
+        return divide(num1, num2);
+    } else if(operator == inverse) {
+        return inverse(num1);
+    } else if(operator == square) {
+        return square(num1);
+    } else if(operator == squareRoot) {
+        return squareRoot(num1);
+    } else if(operator == invertor) {
+        return invertor(num1)
+    } else if(operator == remainder) {
+        return remainder(num1, num2)
+    }
 
 }
 
