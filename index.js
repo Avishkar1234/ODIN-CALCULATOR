@@ -54,7 +54,6 @@ function remainder(num1, num2) {
     num2 = parseFloat(num2)
     return num1%num2;
 }
-console.log(squareRoot(2))
 
 function operate(operator, num1, num2) {
     if (operator == add) {
@@ -87,6 +86,38 @@ const populator = function() {
         button.addEventListener("click", () => {
             if(!isNaN(button.textContent)) {
                 display.textContent += button.textContent
+            } else if( button.textContent === "+") {
+                num1 = display.textContent;
+                operator = add;
+                display.textContent = ""
+            } else if( button.textContent === "-") {
+                num1 = display.textContent;
+                operator = sub;
+                display.textContent = ""
+            } else if( button.textContent === "×"){
+                num1 = display.textContent;
+                operator = multiply;
+                display.textContent = ""
+            } else if (button.textContent === "÷") {
+                num1 = display.textContent;
+                operator = divide;
+                display.textContent = ""
+            } else if (button.textContent === "1/x") {
+                num1 = display.textContent;
+                display.textContent = inverse(num1)
+            } else if (button.textContent === "x²") {
+                num1 = display.textContent;
+                display.textContent = square(num1)
+            } else if (button.textContent === "√x") {
+                num1 = display.textContent;
+                display.textContent = squareRoot(num1)
+            } else if (button.textContent === "+/-") {
+                num1 = display.textContent;
+                display.textContent = invertor(num1)
+            } else if(button.textContent === "%") {
+                num1 = display.textContent;
+                operator = "%"
+                display.textContent = ""
             }
         })
     });
