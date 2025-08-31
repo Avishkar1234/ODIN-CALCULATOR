@@ -17,17 +17,62 @@ body {
     font-size: 25px;
     font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
     padding: 5px;
+    white-space: nowrap;
+    text-align: right;
+    width: 220px;
+    overflow: hidden;
+    text-overflow: clip;
+
+    box-sizing: border-box;
 }
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: auto;
+}
+
+.calculator-container {  
+    width: 250px;
+    height: 40px;
+    background: transparent;
+    text-align: right;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    display: none;
+    border: 1px solid maroon;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+
+.calculator-container .scroll-sync {
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 400px;
+    line-height: 30px;
+    height: 100%;
+}
+
 
 .calculator{
     background-color: rgb(1, 1, 29);
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.calculator-container.show-scroller {
+    display: block;
 }
 
 .button {
@@ -40,6 +85,24 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.calculator-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.calculator-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.calculator-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.calculator-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 div {

@@ -81,6 +81,22 @@ function operate(operator, num1, num2) {
 const populator = function() {
     let display = document.querySelector(".display")
     let buttons = document.querySelectorAll(".button")
+    let syncScroller = document.querySelector(".scroll-sync")
+    let container = document.querySelector(".calculator-container")
+
+    const updateScroller = function() {
+        syncScroller.textContent = display.textContent
+
+        if(display.textContent.length > 15) {
+            container.classList.add("show-scroller")
+            setTimeout(() => {
+                container.scrollLeft = container.scrollWidth - container.clientWidth
+            }, 10)
+        } else {
+            container.classList.remove("show-scroller")
+        }
+
+    }
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -116,12 +132,38 @@ const populator = function() {
                 display.textContent = invertor(num1)
             } else if(button.textContent === "%") {
                 num1 = display.textContent;
-                operator = "%"
+                operator = remainder
                 display.textContent = ""
+            } else if( button.textContent === "=") {
+                num2 = display.textContent;
+                
+                if (operator === add) display.textContent = operate(operator, num1, num2)
+                if (operator === sub) display.textContent = operate(operator, num1, num2)
+                if (operator === multiply) display.textContent = operate(operator, num1, num2)
+                if (operator === divide) display.textContent = operate(operator, num1, num2)
+                if (operator === inverse) display.textContent = operate(operator, num1, num2)
+                if (operator === square) display.textContent = operate(operator, num1, num2)
+                if (operator === squareRoot) display.textContent = operate(operator, num1, num2)
+                if (operator === invertor) display.textContent = operate(operator, num1, num2)
+                if (operator === remainder) display.textContent = operate(operator, num1, num2)
+            } else if(button.textContent === ".") {
+                display.textContent += button.textContent
+            } else if( button.textContent === "CE") {
+                display.textContent = ""
+            } else if( button.textContent === "⌫") {
+                display.textContent = display.textContent.slice(0, display.textContent.length - 1)
+            } else if (button.textContent === "C") {
+                display.textContent = ""
+                num1 = null;
+                num2 = null;
+                operator = null;
             }
+
+            updateScroller();
         })
     });
 }
+
 
 let num1;
 let num2;
