@@ -87,6 +87,10 @@ body {
     cursor: pointer;
 }
 
+.operator-display{
+    font-size: 20px;
+}
+
 .calculator-container::-webkit-scrollbar {
     height: 8px;
 }
